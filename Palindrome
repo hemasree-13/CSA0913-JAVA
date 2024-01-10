@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class PalindromeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        String formattedInput = input.replaceAll("\\s", "").toLowerCase();
+
+        boolean isPalindrome = true;
+
+        for (int i = 0; i < formattedInput.length() / 2; i++) {
+            if (formattedInput.charAt(i) != formattedInput.charAt(formattedInput.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome) {
+            System.out.println("The entered string is a palindrome.");
+        } else {
+            System.out.println("The entered string is not a palindrome.");
+        }
+
+        scanner.close();
+    }
+}
